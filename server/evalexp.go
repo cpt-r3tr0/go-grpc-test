@@ -50,6 +50,9 @@ func evaluateSimpleExp(expr string) float64 {
 	case "*":
 		return op1 * op2
 	case "/":
+		if op2 == 0 {
+			return math.Inf(1)
+		}
 		return op1 / op2
 	}
 
